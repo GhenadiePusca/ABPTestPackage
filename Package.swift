@@ -5,11 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "ABPTestPackage",
+    platforms: [
+        .macOS(.v10_11), .iOS(.v11)
+    ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "ABPTestPackage",
-            targets: ["ABPTestPackage"]),
+            targets: ["ABPTestCombinePackage"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,6 +23,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "ABPTestPackage",
+            dependencies: []),
+        .target(
+            name: "ABPTestCombinePackage",
             dependencies: []),
         .testTarget(
             name: "ABPTestPackageTests",

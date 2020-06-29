@@ -1,3 +1,3 @@
-struct ABPTestPackage {
-    var text = "Hello, World!"
+public struct ABPTestPackage {
+    public var text = "Hello, World!"
 }
